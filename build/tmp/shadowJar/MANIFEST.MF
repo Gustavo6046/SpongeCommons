@@ -1,0 +1,5 @@
+Manifest-Version: 1.0
+Implementation-Title: jar
+Implementation-Version: 2017.12.01.1
+Class-Path: spongeapi-7.0.0-20170930.031759-41-shaded.jar
+

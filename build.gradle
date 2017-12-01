@@ -1,0 +1,40 @@
+buildscript {
+  repositories {
+      maven {
+	      url "https://plugins.gradle.org/m2/"
+	  }
+  }
+
+  dependencies {
+    classpath "com.github.jengelman.gradle.plugins:shadow:2.0.1"
+  }
+}
+
+apply plugin: "com.github.johnrengelman.shadow"
+apply plugin: 'java'
+
+group = 'usr.gustavo6046.spongepowered.protocol'
+description = 'SpongeCommons is a library meant to ease the transition between Client and Server.'
+version = '2017.12.01.1'
+
+jar {
+	manifest { 
+		attributes 'Implementation-Title': name,
+				   'Implementation-Version': version 
+	}
+}
+
+tasks.withType(Jar) {
+	destinationDir = file('dist')
+}
+
+repositories {
+	mavenCentral()
+	jcenter()
+}
+
+dependencies {
+    shadow fileTree(dir: 'lib', include: '*.jar')
+}
+
+project.tasks.assemble.dependsOn project.tasks.shadowJar
