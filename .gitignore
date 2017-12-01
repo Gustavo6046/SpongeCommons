@@ -18,12 +18,19 @@
 *.tar.gz
 *.rar
 
+# (except for libraries)
+!lib/*.jar
+!lib/*.war
+!lib/*.ear
+!lib/*.zip
+!lib/*.tar.gz
+!lib/*.rar
+
 # Eclipse files
 .settings/
 
 # Gradle files
 .gradle/
-gradle/
 
 # Temporary files
 build/
