@@ -23,6 +23,7 @@
 
 # Gradle files
 .gradle/
+gradle/
 
 # Temporary files
 build/
